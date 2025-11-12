@@ -1,229 +1,238 @@
-// 1.1
-let nome = "Paulo";
+//1. Variáveis e Tipos de Dados
+//1.1
+let nome = "paulo";
 console.log(nome);
 
-// 1.2
-let idade = 18;
-let altura = 1.85;
-console.log(`Tenho ${idade} anos e ${altura} metros de altura.`);
+//1.2
+let idade = "17";
+let altura = "1.68";
+console.log(" tenho 17 anos e 1.68 de altura");
 
-// 1.3
+//1.3
 let estudando = true;
-console.log("Estou estudando?", estudando);
-
-// 2.1
-let num1 = 10;
-let num2 = 5;
-console.log(num1 + num2);
-
-// 2.2
-console.log(num1 / num2);
-
-// 2.3
-let idd = Number(prompt("Digite sua idade:")); // Solicita a idade do usuário
-let maiorDeIdade = idd >= 18; // Verifica se a idade é maior ou igual a 18
-console.log(`Você tem ${idd} anos. É maior de idade? ${maiorDeIdade}`);
-
-// 3.1
-let numero = Number(prompt("Digite um número:"));
-if (numero % 2 === 0) {
-  console.log("O número é par");
+if (estudando) {
+  console.log("estou estudando");
 } else {
-  console.log("O número é ímpar");
+  console.log("nao estou estudando");
 }
 
-// 3.2
-let idadeUser = Number(prompt("Digite sua idade:"));
-if (idadeUser >= 18) {
-  console.log("Você pode dirigir!");
+
+//2. Operadores
+//2.1
+let numero1 = 10;
+let numero2 = 5;
+let resultado = numero1 % 6
+numero2;
+console.log("o resultado é", resultado);
+
+//2.2
+let numero3 = 20;
+let numero4 = 4;
+let resto = numero1 % numero2;
+console.log("O resto da divisao de", numero1, "por", numero2, "e", resto);
+console.log(20 % 5);
+
+//2.3
+if (idade >= 18) {
+  console.log(" Maior de idade");
 } else {
-  console.log("Você ainda não pode dirigir!");
+  console.log("Menor de idade");
+}
+letidade = 20;
+console.log(idade >= 18);
+
+//3.1
+let numero = prompt("Digite um número:");
+numero = Number(numero);
+
+if (isNaN(numero)) {
+  console.log("Por favor, digite um número válido.");
+} else if (numero % 2 === 0) {
+  console.log("O número é par.");
+} else {
+  console.log("O número é impar.");
 }
 
-// 3.3
-let nota = Number(prompt("Digite sua nota (0 a 10):"));
-if (nota < 5) {
-  console.log("Reprovado");
-} else if (nota < 7) {
-  console.log("Recuperação");
+//3.2
+let idadeee = Number(prompt("Digite sua idade:"));
+
+if (isNaN(idadeee) || idadeee < 0) {
+  alert("Por favor, digite uma idade valida.");
+} else if (idadeee >= 18) {
+  alert("Você pode dirigir!");
 } else {
-  console.log("Aprovado");
+  alert("Você nao pode dirigir.");
 }
 
-// 4.1
+//3.3
+let notaa = Number(prompt("Digite sua nota (0 a 10):"));
+
+if (isNaN(notaa) || notaa < 0 || notaa > 10) {
+  alert("Por favor, digite uma nota valida entre 0 e 10.");
+} else if (notaa < 5) {
+  alert("Reprovado ");
+} else if (notaa >= 5 && notaa < 7) {
+  alert("Recuperacao ");
+} else {
+  alert("Aprovado ");
+}
+
+//4.1
 for (let i = 1; i <= 10; i++) {
-    console.log(i);
+  console.log(i);
 }
 
-// 4.2
-let num = prompt("Digite um número para a tabuada:");
-numero = Number(num);
-for (let i = 1; i <= 10; i++) {
-    console.log(`${num} x ${i} = ${num * i}`);
+//4.2
+const numeroo = parseInt(prompt('Digite um número para ver a tabuada:'));
+if (isNaN(numeroo)) {
+  console.log(`Tabuada do ${numeroo}:`);
+  for (let i = 1; i <= 10; i++) {
+    const resultado = numeroo * i;
+    console.log(`${numeroo} x ${i} = ${resultado}`);
+  }
+} else {
+  console.log('Entrada inválida. Por favor, digite um número.');
 }
 
 //4.3
+let senha = "";
 
-let senha;
 while (senha !== "1234") {
-    senha = prompt("Digite a senha:");
-    if (senha !== "1234") {
-        console.log("Senha incorreta. Tente novamente.");
-    }
+  senha = prompt("Digite a senha:");
 }
-console.log("Senha correta!");
+
+alert("Senha correta! Acesso permitido.");
 
 //5.1
-
-function somar(num1, num2) {
-    return num1 + num2;
+function soma(a, b) {
+  return a + b;
 }
-console.log(somar(5, 3)); 
+console.log(soma(5, 3));
 
 //5.2
-function saudar(nome) {
-    return `Olá, ${nome}!`;
+function saudacao(nome) {
+  return `Olá, ${nome}!`;
 }
-console.log(saudar("Paulo"));
+console.log(saudacao("Maria"));
 
 //5.3
-function calcularMedia(nota1, nota2, nota3) {
-    return (nota1 + nota2 + nota3) / 3;
+function media(n1, n2, n3) {
+  return (n1 + n2 + n3) / 3;
 }
-console.log(calcularMedia(7, 8, 9));
-
+console.log(media(7, 8, 8));
 //6.1
-let nomes = ["Ana", "Nina", "Roberta", "Tania", "Paulo"];
-console.log(`Primeiro: ${nomes[0]}`);
-console.log(`Último: ${nomes[nomes.length - 1]}`);
-
+let nomes = ["Ana", "Bruno", "Carla", "Lucas", "Eduarda"];
+console.log("Primeiro nome:", nomes[0]);
+console.log("Último nome:", nomes[nomes.length - 1]);
 //6.2
-let nomes1 = ["Ana", "Nina", "Roberta", "Tania", "Paulo"];
-let novoNome = prompt("Digite um novo nome para adicionar ao array:"); // Solicita o novo nome
-nomes.push(novoNome); // Adiciona o nome inserido pelo usuário ao final do array
-console.log("Lista de nomes:");
-for (let nome of nomes) {
-    console.log(nome); // Exibe cada nome individualmente
-}
-
+nomes.push("Felipe");
+console.log("Array após adicionar novo nome:", nomes);
 //6.3
-let names = ["Ana", "Nina", "Roberta", "Tania", "Paulo"];
-for (let nome of nomes) {
-    console.log(nome); // Exibe cada elemento do array
+console.log("Lista de nomes:");
+for (let i = 0; i < nomes.length; i++) {
+  console.log(nomes[i]);
 }
 
 //7.1
-let carro = {
-    marca: "Toyota",
-    modelo: "Corolla",
-    ano: 2020
+const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2022
 };
-console.log(carro);
+console.log("Carro:", carro);
 
 //7.2
 let aluno = {
-    nome: "Paulo",
-    idade: 18,
-    notas: [7, 8, 9]
+  nome: "Igor",
+  idade: 17,
+  notas: [8, 7, 9]
 };
-let media = aluno.notas.reduce((a, b) => a + b) / aluno.notas.length;
-console.log(`Nome: ${aluno.nome}, Média: ${media}`);
+let somaa = aluno.notas[0] + aluno.notas[1] + aluno.notas[2];
+let mediaa = soma / aluno.notas.length;
+console.log("Nome:", aluno.nome);
+console.log("Média:", media);
 
 //7.3
-let produtos = [
-    { nome: "Celular", preco: 1200 },
-    { nome: "Notebook", preco: 3500 },
-    { nome: "Fone", preco: 150 }
+const produtos = [
+  { nome: "Notebook", preco: 3500 },
+  { nome: "Mouse", preco: 80 },
+  { nome: "Teclado", preco: 150 }
 ];
-console.log(produtos);
+console.log("Produtos:");
+produtos.forEach((produto, index) => {
+  console.log(`${index + 1}. ${produto.nome} - R$ ${produto.preco}`);
+});
 
 //8.1
-const trocarCorBtn = document.getElementById("trocar-cor");
-
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+document.addEventListener('DOMContentLoaded', () => {
+  const btnCor = document.getElementById('btnCor');
+  if (btnCor) {
+    btnCor.addEventListener('click', () => {
+      const body = document.body;
+      body.style.backgroundColor = body.style.backgroundColor === 'pink' ? 'black' : 'pink';
+    });
   }
-  return color;
-}
+  //8.2
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnCor = document.getElementById('btnCor');
+    if (btnCor) {
+      btnCor.addEventListener('click', () => {
+        const body = document.body;
+        body.style.backgroundColor = body.style.backgroundColor === 'pink' ? 'black' : 'pink';
+      });
+    }
 
-trocarCorBtn.addEventListener("click", () => {
-  document.body.style.setProperty('background-color', getRandomColor(), 'important');
-});
+    //8.3
+    const btnContador = document.getElementById('btnContador');
+    const contadorSpan = document.getElementById('contador');
+    let cliques = 0;
+    if (btnContador) {
+      btnContador.addEventListener('click', () => {
+        cliques++;
+        if (contadorSpan) {
+          contadorSpan.textContent = 'Cliques: ' + cliques;
+        } else {
+          btnContador.textContent = 'Cliques: ' + cliques;
+        }
+      });
+    }
+  });
 
 
-//8.2
-const botaoTexto = document.getElementById("mostrar-texto");
-const mensagem = document.getElementById("mensagem");
+  //9.1
+  let nomeUsuario = prompt("Digite seu nome:");
+  console.log("Seu nome tem " + nomeUsuario.length + " letras.");
 
-botaoTexto.addEventListener("click", () => {
-  const texto = document.getElementById("texto").value.trim();
-  if (texto === "") {
-    mensagem.textContent = "Digite algo antes!";
-    mensagem.style.color = "red";
-  } else {
-    console.log("Texto digitado:", texto);
-    mensagem.textContent = `Você digitou: ${texto}`;
-    mensagem.style.color = "#04070cff";
-  }
-});
+  //9.2
+  let frase = prompt("Digite uma frase:");
+  console.log(frase.toUpperCase());
 
+  //9.3
+  let texto = prompt("Digite um texto:");
+  console.log(texto.substring(0, 5));
 
-//8.3
-
-const botaoContador = document.getElementById("contador");
-let contador = 0;
-
-botaoContador.addEventListener("click", () => {
-  contador++;
-  botaoContador.textContent = `Cliques: ${contador}`;
-});
-
-// 4️⃣ Resetar tudo
-const botaoResetar = document.getElementById("resetar");
-botaoResetar.addEventListener("click", () => {
-  document.body.style.backgroundColor = "#b3e5fc";
-  contador = 0;
-  botaoContador.textContent = "Cliques: 0";
-  mensagem.textContent = "";
-  document.getElementById("texto").value = "";
-});
-
-//9.
-let nomeuser = prompt("Digite um nome:"); // Solicita o nome do usuário
-let quantidadeLetras = nome.length; // Conta o número de letras
-console.log(`O nome "${nome}" tem ${quantidadeLetras} letras.`);
-
-//9.2
-let frase = prompt("Digite uma frase:"); // Solicita uma frase do usuário
-let fraseMaiuscula = frase.toUpperCase(); // Converte a frase para letras maiúsculas
-console.log(`Frase em maiúsculas: ${fraseMaiuscula}`);
-
-//9.3
-let texto = prompt("Digite um texto:"); // Solicita um texto do usuário
-let primeirosCinco = texto.slice(0, 5); // Extrai os 5 primeiros caracteres
-
-//10.1
-let promessa = new Promise((resolve) => {
-    setTimeout(() => {
-        resolve("Concluído!");
+  //10.1
+  let promessa = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("Concluído!");
     }, 3000);
-});
-promessa.then((mensagem) => console.log(mensagem));
+  });
+  promessa.then(function (mensagem) {
+    console.log(mensagem);
+  });
 
-//10.2
-fetch("https://jsonplaceholder.typicode.com/todos/1")
+  //10.2
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then(response => response.json())
     .then(data => console.log(data))
-    .catch(error => console.error("Erro:", error));
+    .catch(error => console.log("Erro:", error));
 
-//10.3
-
-fetch("https://jsonplaceholder.typicode.com/posts")
+  //10.3
+  fetch("https://jsonplaceholder.typicode.com/posts")
     .then(response => response.json())
-    .then(data => {
-        data.forEach(post => console.log(post.title));
+    .then(posts => {
+      posts.forEach(post => {
+        console.log(post.title);
+      });
     })
-    .catch(error => console.error("Erro:", error));
+    .catch(error => console.log("Erro:", error));
