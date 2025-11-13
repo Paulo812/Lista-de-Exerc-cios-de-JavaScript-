@@ -172,44 +172,33 @@ document.addEventListener('DOMContentLoaded', () => {
       body.style.backgroundColor = body.style.backgroundColor === 'pink' ? 'black' : 'pink';
     });
   }
-  //8.2
-  document.addEventListener('DOMContentLoaded', () => {
-    const btnCor = document.getElementById('btnCor');
-    if (btnCor) {
-      btnCor.addEventListener('click', () => {
-        const body = document.body;
-        body.style.backgroundColor = body.style.backgroundColor === 'pink' ? 'black' : 'pink';
-      });
-    }
 
-    //8.3
-    const btnContador = document.getElementById('btnContador');
-    const contadorSpan = document.getElementById('contador');
-    let cliques = 0;
-    if (btnContador) {
-      btnContador.addEventListener('click', () => {
-        cliques++;
-        if (contadorSpan) {
-          contadorSpan.textContent = 'Cliques: ' + cliques;
-        } else {
-          btnContador.textContent = 'Cliques: ' + cliques;
-        }
-      });
-    }
-  });
-
+  //8.3
+  const btnContador = document.getElementById('btnContador');
+  const contadorSpan = document.getElementById('contador');
+  let cliques = 0;
+  if (btnContador) {
+    btnContador.addEventListener('click', () => {
+      cliques++;
+      if (contadorSpan) {
+        contadorSpan.textContent = 'Cliques: ' + cliques;
+      } else {
+        btnContador.textContent = 'Cliques: ' + cliques;
+      }
+    });
+  }
 
   //9.1
   let nomeUsuario = prompt("Digite seu nome:");
-  console.log("Seu nome tem " + nomeUsuario.length + " letras.");
+  console.log("Seu nome tem " + (nomeUsuario ? nomeUsuario.length : 0) + " letras.");
 
   //9.2
   let frase = prompt("Digite uma frase:");
-  console.log(frase.toUpperCase());
+  if (frase) console.log(frase.toUpperCase());
 
   //9.3
   let texto = prompt("Digite um texto:");
-  console.log(texto.substring(0, 5));
+  if (texto) console.log(texto.substring(0, 5));
 
   //10.1
   let promessa = new Promise(function (resolve, reject) {
@@ -236,3 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     })
     .catch(error => console.log("Erro:", error));
+});
